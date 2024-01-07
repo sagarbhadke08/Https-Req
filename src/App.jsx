@@ -1,5 +1,4 @@
 import { useRef, useState, useCallback } from 'react';
-
 import Places from './components/Places.jsx';
 import Modal from './components/Modal.jsx';
 import DeleteConfirmation from './components/DeleteConfirmation.jsx';
@@ -32,6 +31,8 @@ function App() {
       }
       return [selectedPlace, ...prevPickedPlaces];
     });
+
+    fetch
   }
 
   const handleRemovePlace = useCallback(async function handleRemovePlace() {
@@ -62,8 +63,6 @@ function App() {
       <main>
         <Places
           title="I'd like to visit ..."
-          loadingText='Fetching place data...'
-          isLoading='true'
           fallbackText="Select the places you would like to visit below."
           places={userPlaces}
           onSelectPlace={handleStartRemovePlace}
