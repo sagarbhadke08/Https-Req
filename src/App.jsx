@@ -62,6 +62,8 @@ function App() {
       <main>
         <Places
           title="I'd like to visit ..."
+          loadingText='Fetching place data...'
+          isLoading='true'
           fallbackText="Select the places you would like to visit below."
           places={userPlaces}
           onSelectPlace={handleStartRemovePlace}
