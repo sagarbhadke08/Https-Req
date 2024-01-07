@@ -25,7 +25,7 @@ export default function AvailablePlaces({ onSelectPlace }) {
           throw new Error('Failed to fetch the places');
         }
 
-        navigator.geolocation.getCurrentPosition(() => {
+        navigator.geolocation.getCurrentPosition((position) => {
 
           const sortedPlaces = sortPlacesByDistance(
             resData.places,
@@ -33,9 +33,9 @@ export default function AvailablePlaces({ onSelectPlace }) {
             position.coords.longitude
           );
 
-          setAvailablePlaces(resData.places);
+          setAvailablePlaces(sortedPlaces);
           setIsFetching(false);
-        })
+        });
 
       } catch (error) {
         setError({
