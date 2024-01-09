@@ -24,6 +24,7 @@ function App() {
   }
 
   async function handleSelectPlace(selectedPlace) {
+    //    await updateUserPlaces([selectedPlace, ...userPlaces]);
     setUserPlaces((prevPickedPlaces) => {
       if (!prevPickedPlaces) {
         prevPickedPlaces = [];
@@ -39,7 +40,8 @@ function App() {
       await updateUserPlaces([selectedPlace, ...userPlaces]);
 
     } catch (error) {
-      ////
+    
+      setUserPlaces(userPlaces);
     }
   }
 
