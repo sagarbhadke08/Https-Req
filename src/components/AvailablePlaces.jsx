@@ -8,8 +8,8 @@ import { fetchAvailablePlaces } from '../http.js';
 export default function AvailablePlaces({ onSelectPlace }) {
 
   const [isFeatching, setIsFetching] = useState(false);
-  const [availablePlaces, setAvailablePlaces] = useState([]);
   const [error, setError] = useState();
+  const [availablePlaces, setAvailablePlaces] = useState([]);
 
 
   useEffect(() => {
